@@ -1,19 +1,15 @@
-<div>
+<div class="container">
   <h3>Crear un usuario</h3>
   <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <label>
       Nombre: 
-      <input type="text" fromControlName="firstName">
+      <input type="text" formControlName="firstName">
     </label>
     <label>
       Apellido: 
-      <input type="text" fromControlName="lastName">
+      <input type="text" formControlName="lastName">
     </label>
-    <label>
-      Email: 
-      <input type="text" fromControlName="email">
-    </label>
-    <button class="button" type="submit" [disabled]="!profileForm.valid">Guardar</button>
-    
+    <button class="button" type="submit">Guardar</button>
+
   </form>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({    
@@ -6,14 +6,18 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: './create-user.component.html',
   styleUrls: ['./create-user.component.css']
 })
-export class CreateUserComponent {
+export class CreateUserComponent implements OnInit {
   profileForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
-    email: new FormControl(''),
   });
 
   onSubmit() {
     console.warn(this.profileForm.value);
+  }
+
+  constructor() { }
+
+  ngOnInit() {
   }
 }
