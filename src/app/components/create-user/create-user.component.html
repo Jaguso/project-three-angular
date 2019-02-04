@@ -1,3 +1,19 @@
 <div>
-  <p>This is your motherfucker bitch</p>
+  <h3>Crear un usuario</h3>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label>
+      Nombre: 
+      <input type="text" fromControlName="firstName">
+    </label>
+    <label>
+      Apellido: 
+      <input type="text" fromControlName="lastName">
+    </label>
+    <label>
+      Email: 
+      <input type="text" fromControlName="email">
+    </label>
+    <button class="button" type="submit" [disabled]="!profileForm.valid">Guardar</button>
+    
+  </form>
 </div>

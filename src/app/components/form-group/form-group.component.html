@@ -1,0 +1,15 @@
+<div>
+  <h1>This is Sparta</h1>
+  <form [formGroup]="basicForm" (ngSubmit)="onSubmit()">
+    <label>
+      Question One:
+      <input type="text" formControlName="questionOne">
+    </label>
+    <label>
+      Question Two:
+      <input type="text" formControlName="questionTwo">
+    </label>
+    <button class="button" type="submit">Submit</button>
+
+  </form>
+</div>
