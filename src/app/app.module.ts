@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,6 +10,8 @@ import { AppComponent } from './app.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { FormGroupComponent } from './components/form-group/form-group.component';
+
+import { UsersService } from './users.service';
 
 const routes: Routes = [
   { path: 'create', component: CreateUserComponent },
@@ -29,9 +32,10 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
