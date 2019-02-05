@@ -10,6 +10,7 @@ export class CreateUserComponent implements OnInit {
   profileForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
+    email: new FormControl(''),
   });
 
   onSubmit() {
