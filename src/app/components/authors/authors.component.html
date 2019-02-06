@@ -1,0 +1,15 @@
+<div class="container">
+  <h3>Crea un autor</h3>
+  <form [formGroup]="authorForm" (ngSubmit)="onSubmit()">
+    <label>
+      Nombre:
+      <input type="text" formControlName="name">
+    </label>
+    <label>
+      Nacionalidad:
+      <input type="text" formControlName="nationality">
+    </label>
+    <button class="button" type="submit">Crear</button>
+
+  </form>
+</div>

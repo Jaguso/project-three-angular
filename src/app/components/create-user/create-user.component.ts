@@ -7,6 +7,11 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./create-user.component.css']
 })
 export class CreateUserComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit() {
+  }
+  
   profileForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
@@ -17,8 +22,4 @@ export class CreateUserComponent implements OnInit {
     console.warn(this.profileForm.value);
   }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 }

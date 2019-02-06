@@ -12,11 +12,14 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { FormGroupComponent } from './components/form-group/form-group.component';
 
 import { UsersService } from './users.service';
+import { AuthorsComponent } from './components/authors/authors.component';
+import { AuthorsService } from './services/authors.service';
 
 const routes: Routes = [
   { path: 'create', component: CreateUserComponent },
   { path: 'list', component: UsersListComponent },
   { path: 'form', component: FormGroupComponent },
+  { path: 'authors', component: AuthorsComponent },
   { path: '', redirectTo: 'create', pathMatch: 'full' }
 ];
 
@@ -26,7 +29,8 @@ const routes: Routes = [
     AppComponent,
     CreateUserComponent,
     UsersListComponent,
-    FormGroupComponent
+    FormGroupComponent,
+    AuthorsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [UsersService],
+  providers: [UsersService, AuthorsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
