@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-// import { AuthorsService } from '../../services/authors.service';
+import { AuthorsService } from '../../services/authors.service';
 
 @Component({
   selector: 'app-authors',
@@ -9,9 +9,12 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AuthorsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authorsService: AuthorsService) { }
 
   ngOnInit() {
+    this.authorsService.getAuthors().subscribe((authors) => {
+      console.log(authors);
+    });
   }
 
   authorForm = new FormGroup({
